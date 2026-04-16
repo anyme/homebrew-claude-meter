@@ -3,8 +3,8 @@ class ClaudeMeter < Formula
 
   desc "Token usage tracker for Claude Code"
   homepage "https://gitlab.com/anastassia.kryukova/claude-meter"
-  url "https://gitlab.com/anastassia.kryukova/claude-meter/-/archive/v0.1.0/claude-meter-v0.1.0.tar.gz"
-  sha256 "6410b298337a251f7d2470b1efe9823b3329729e98ffe22df8d6a466e86eda3a"
+  url "https://gitlab.com/anastassia.kryukova/claude-meter/-/archive/v0.1.1/claude-meter-v0.1.1.tar.gz"
+  sha256 "ab2d5efbffd122d9aadac482343e29ccbae37f757b862e40b84ce03d59bbaeec"
   license "MIT"
 
   depends_on "python@3.12"
