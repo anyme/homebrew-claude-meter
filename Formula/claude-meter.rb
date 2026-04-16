@@ -1,0 +1,59 @@
+class ClaudeMeter < Formula
+  include Language::Python::Virtualenv
+
+  desc "Token usage tracker for Claude Code"
+  homepage "https://gitlab.com/anastassia.kryukova/claude-meter"
+  url "https://gitlab.com/anastassia.kryukova/claude-meter/-/archive/v0.1.0/claude-meter-v0.1.0.tar.gz"
+  sha256 "99e1fe316e0411b75fd8b8c1f56f9957323c270981d1613380f8154fa341609b"
+  license "MIT"
+
+  depends_on "python@3.12"
+
+  resource "click" do
+    url "https://files.pythonhosted.org/packages/source/c/click/click-8.3.2.tar.gz"
+    sha256 "14162b8b3b3550a7d479eafa77dfd3c38d9dc8951f6f69c78913a8f9a7540fd5"
+  end
+
+  resource "rich" do
+    url "https://files.pythonhosted.org/packages/source/r/rich/rich-15.0.0.tar.gz"
+    sha256 "edd07a4824c6b40189fb7ac9bc4c52536e9780fbbfbddf6f1e2502c31b068c36"
+  end
+
+  resource "questionary" do
+    url "https://files.pythonhosted.org/packages/source/q/questionary/questionary-2.1.1.tar.gz"
+    sha256 "3d7e980292bb0107abaa79c68dd3eee3c561b83a0f89ae482860b181c8bd412d"
+  end
+
+  resource "prompt_toolkit" do
+    url "https://files.pythonhosted.org/packages/source/p/prompt_toolkit/prompt_toolkit-3.0.52.tar.gz"
+    sha256 "28cde192929c8e7321de85de1ddbe736f1375148b02f2e17edd840042b1be855"
+  end
+
+  resource "wcwidth" do
+    url "https://files.pythonhosted.org/packages/source/w/wcwidth/wcwidth-0.6.0.tar.gz"
+    sha256 "cdc4e4262d6ef9a1a57e018384cbeb1208d8abbc64176027e2c2455c81313159"
+  end
+
+  resource "markdown-it-py" do
+    url "https://files.pythonhosted.org/packages/source/m/markdown-it-py/markdown_it_py-4.0.0.tar.gz"
+    sha256 "cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3"
+  end
+
+  resource "mdurl" do
+    url "https://files.pythonhosted.org/packages/source/m/mdurl/mdurl-0.1.2.tar.gz"
+    sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
+  end
+
+  resource "pygments" do
+    url "https://files.pythonhosted.org/packages/source/p/pygments/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
+  end
+
+  def install
+    virtualenv_install_with_resources
+  end
+
+  test do
+    system "#{bin}/claude-meter", "--help"
+  end
+end
